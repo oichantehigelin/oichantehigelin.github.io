@@ -1,0 +1,35 @@
+@import "variables";
+
+/*----------*\
+    Header
+\*----------*/
+
+header {
+    background-color: $header-bg;
+    height: $header-height;
+    padding: 0 !important;
+    h1 {
+        font-size: $base-text-size * 3;
+        color: $header-title-color;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 800px) {
+    header {
+        height: 80vh;
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 800px) {
+    header h1 {
+        font-size: $header-title-size;
+    }
+}
