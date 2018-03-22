@@ -42,6 +42,18 @@ p {
     margin-top: 1em;
 }
 
+/*** Desktop only ***/
+
+@media screen and (min-width: 800px) {
+    #one #header {
+        position: fixed;
+        width: 30%;
+        h1 {
+            font-size: $base-text-size * 3.5;
+        }
+    }
+}
+
 /********** Page : Groupe **********/
 
 #groupe #introduction {
@@ -67,17 +79,9 @@ p {
     }
 }
 
-/********** Desktop only **********/
+/*** Desktop only ***/
 
 @media screen and (min-width: 800px) {
-    #one #header {
-        position: fixed;
-        width: 30%;
-        h1 {
-            font-size: $base-text-size * 3.5;
-        }
-    }
-    
     #members > section {
         margin: 5vh 10vh;
     }
@@ -90,8 +94,46 @@ p {
     }
 }
 
-/********** Mobile only **********/
+/********** Page : Découvrir **********/
+
+/*** Desktop only ***/
+
+@media screen and (min-width: 800px) {
+    #video-box {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 30%;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/*** Mobile only ***/
 
 @media screen and (max-width: 800px) {
-    
+    #video-box {
+        text-align: center;
+    }
+}
+
+/********** Page : Dates **********/
+
+#agenda {
+    text-align: left;
+    table {
+        border: 2px solid black;
+        width: 100%;
+        border-collapse: collapse;
+        
+        td, th {
+            border: 2px solid black;
+            padding: 1em;
+        }
+    }
 }
