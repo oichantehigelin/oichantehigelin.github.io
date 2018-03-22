@@ -20,3 +20,22 @@ $(document).ready(function() {
         $("#two > section").show();
     }
 });
+
+/***** Music player *****/
+
+$(document).ready(function() {
+    var audio = $("#audio");
+    var buttonControl = $("button.control");
+    // Play/pause button
+    buttonControl.click(function() {
+        if ($(this).children("i").hasClass("fa-play")) {
+            audio.trigger("play");
+            $(this).children("i").removeClass("fa-play");
+            $(this).children("i").addClass("fa-pause");
+        } else {
+            audio.trigger("pause");
+            $(this).children("i").removeClass("fa-pause");
+            $(this).children("i").addClass("fa-play");
+        }
+    });
+});

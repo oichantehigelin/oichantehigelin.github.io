@@ -98,6 +98,31 @@ p {
 
 /*** Desktop only ***/
 
+#audio-files {
+    background-color: red;
+    margin-top: 2em;
+    #classic {
+        background-color: yellow;
+        width: 30%;
+        text-align: center;
+        padding: 1em;
+        audio {
+            background-color: black;
+        }
+    }
+}
+
+#custom {
+    background-color: orange;
+    width: 50%;
+    margin-top: 2em;
+    #control {
+        background-color: yellow;
+        width: 10%;
+        text-align: center;
+    }
+}
+
 @media screen and (min-width: 800px) {
     #video-box {
         position: relative;
