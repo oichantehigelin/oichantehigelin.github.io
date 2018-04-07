@@ -1,5 +1,6 @@
 /***** Active navbar link *****/
 $(document).ready(function() {
+    $("nav .nav-item a").first().addClass("active");
     $("nav .nav-item a").click(function(){
         $("nav .nav-item a").removeClass("active");
         $(this).addClass("active");
@@ -19,23 +20,4 @@ $(document).ready(function() {
     } else {
         $("#two > section").show();
     }
-});
-
-/***** Music player *****/
-
-$(document).ready(function() {
-    var audio = $("#audio");
-    var buttonControl = $("button.control");
-    // Play/pause button
-    buttonControl.click(function() {
-        if ($(this).children("i").hasClass("fa-play")) {
-            audio.trigger("play");
-            $(this).children("i").removeClass("fa-play");
-            $(this).children("i").addClass("fa-pause");
-        } else {
-            audio.trigger("pause");
-            $(this).children("i").removeClass("fa-pause");
-            $(this).children("i").addClass("fa-play");
-        }
-    });
 });

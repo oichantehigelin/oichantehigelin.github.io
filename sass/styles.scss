@@ -1,9 +1,284 @@
-@import "variables";
+/*-------------*\
+    Variables
+\*-------------*/
 
-@import "mixins";
-@import "global";
-@import "grid";
-@import "nav";
-@import "header";
+$bg1: rgb(15, 15, 15);
+$bg2: rgb(25, 25, 25);
+$accent-color: rgb(247,154,81);
+$text-color: white;
 
-@import "project";
+$body-font: "Raleway", sans-serif;
+$title-font: "Boogaloo", sans-serif;
+
+/*---------------*\
+    Responsive
+\*---------------*/
+
+$small: 800px;
+$large: 801px;
+
+@mixin respond-to($media) {
+    @if $media == small {
+        @media only screen and (max-width: $small) { @content; }        /*@include respond-to(small) { ... }*/
+    }
+    @else if $media == large {
+        @media only screen and (min-width: $large) { @content; }        /*@include respond-to(large) { ... }*/
+    }
+}
+
+@mixin font-size($large, $small) {                                      /*@include font-size(4.5em, 2.3em);*/
+    font-size: $large;
+    @include respond-to(small) { font-size: $small; }
+}
+
+/*----------*\
+    Global
+\*----------*/
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    font-family: $body-font;
+    color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $title-font;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    line-height: 150%;
+    @include respond-to(small) {
+        padding: 0 1em;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    @include respond-to(small) {
+        flex-direction: column;
+    }
+}
+
+/*----------------------*\
+    Panels #one & #two
+\*----------------------*/
+
+#one, #two {
+    @include respond-to(small) { 
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+#one {
+    background-color: $bg1;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.7);
+    @include respond-to(large) {
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+    }
+    display: flex;
+    .column {
+        width: 100%;
+        height: 60%;
+        margin: auto;
+        text-align: center;
+        img {
+            width: 40%;
+        }
+        h1 {
+            @include font-size(3.5em, 2em);
+            text-transform: uppercase;
+            color: $accent-color;
+        }
+        p {
+            font-size: 1.1em;
+            text-align: center;
+            a { color: $accent-color; }
+        }
+        a img {
+            width: 50px;
+        }
+    }
+}
+
+#two {
+    background-color: $bg2;
+    width: 100%;
+    @include respond-to(large) {
+        margin-left: 30%;
+    }
+    
+    /***** navigation *****/
+    nav {
+        @include respond-to(small) {
+            display: none;
+        }
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        width: 100%;
+        height: 5vh;
+        display: flex;
+        flex-basis: 100%;
+        background-color: rgb(20,20,20);
+        .nav-item {
+            flex: 1;
+            text-align: center;
+            text-transform: uppercase;
+            height: 5vh;
+            line-height: 5vh;
+            a {
+                color: #9d9d9d;
+                font-size: 0.9em;
+                display: block;
+                &:hover, &.active {
+                    background-color: rgb(17,17,17);
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+}
+
+/*--------------*\
+    Panel #two
+\*--------------*/
+
+/***** Global *****/
+
+#two section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $accent-color;
+        @include font-size(3em, 2em);
+    }
+}
+
+/***** Band *****/
+
+#band {
+    #introduction {
+        display: flex;
+        flex-direction: column;
+        img {
+            margin: auto;
+            @include respond-to(small) {
+                width: 90%;
+            }
+        }
+        p {
+            margin: 3em auto;
+        }
+    }
+    #members {
+        @include respond-to(large) {
+            .row {
+                padding: 3em;
+                display: flex;
+                &:nth-of-type(2), &:nth-of-type(4) {
+                    flex-direction: row-reverse;
+                }
+                img {
+                    width: 30%
+                }
+                .column {
+                    width: 70%;
+                    padding: 0 1em;
+                }
+            }
+        }
+        @include respond-to(small) {
+            .row {
+                display: flex;
+                flex-direction: column;
+                img {
+                    min-width: 60%;
+                    max-width: 80%;
+                    margin: auto;
+                }
+            }
+        }
+        h2 {
+            @include font-size(2.5em, 1.7em);
+            color: $accent-color;
+            text-align: center;
+        }
+    }
+}
+
+/***** Discover *****/
+
+#discover {
+    #video-box {
+        width: 50%;
+        text-align: center;
+        margin: auto;
+    }
+    #audio-player {
+        margin-top: 3em;
+        display: flex;
+        flex-direction: column;
+        div {
+            height: 5vh;
+            width: 50%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            span {
+                line-height: 5vh;
+                padding: 0 1em;
+                font-size: 0.8em;
+                width: 30%;
+            }
+            audio {
+                width: 50%;
+            }
+        }
+    }
+}
+
+/***** Dates *****/
+
+#dates #agenda {
+    text-align: left;
+    width: 80%;
+    margin: auto;
+    table {
+        background-color: $bg1;
+        width: 100%;
+        border-collapse: collapse;
+        td, th {
+            border: 2px solid $bg2;
+        }
+        td {
+            padding: 1em;
+        }
+        th {
+            font-family: $title-font;
+            color: $accent-color;
+            font-size: 1.5em;
+            padding: 0.7em;
+        }
+    }
+}
