@@ -9,6 +9,8 @@ $bg2: rgb(25, 25, 25);
 $accent-color: rgb(247,154,81);
 $text-color: white;
 
+$base-text-size: 16px;
+
 $body-font: "Raleway", sans-serif;
 $title-font: "Boogaloo", sans-serif;
 
@@ -28,7 +30,11 @@ $large: 801px;
     }
 }
 
-@mixin font-size($large, $small) {                                      /*@include font-size(4.5em, 2.3em);*/
+@mixin font-size($value) {
+    font-size: $base-text-size * $value;
+}
+
+@mixin responsive-font-size($large, $small) {                                      /*@include responsive-font-size(4.5em, 2.3em);*/
     font-size: $large;
     @include respond-to(small) { font-size: $small; }
 }
@@ -107,7 +113,7 @@ main {
             width: 40%;
         }
         h1 {
-            @include font-size(3.5em, 2em);
+            @include responsive-font-size(3.5em, 2em);
             text-transform: uppercase;
             color: $accent-color;
         }
@@ -173,7 +179,7 @@ main {
         text-align: center;
         text-transform: uppercase;
         color: $accent-color;
-        @include font-size(3em, 2em);
+        @include responsive-font-size(3em, 2em);
     }
 }
 
@@ -222,7 +228,7 @@ main {
             }
         }
         h2 {
-            @include font-size(2.5em, 1.7em);
+            @include responsive-font-size(2.5em, 1.7em);
             color: $accent-color;
             text-align: center;
         }

@@ -81,7 +81,7 @@ main {
     #one .column img {
       width: 40%; }
     #one .column h1 {
-      /*@include font-size(4.5em, 2.3em);*/
+      /*@include responsive-font-size(4.5em, 2.3em);*/
       font-size: 3.5em;
       /*@include respond-to(small) { ... }*/
       text-transform: uppercase;
@@ -152,7 +152,7 @@ main {
     text-align: center;
     text-transform: uppercase;
     color: #f79a51;
-    /*@include font-size(4.5em, 2.3em);*/
+    /*@include responsive-font-size(4.5em, 2.3em);*/
     font-size: 3em;
     /*@include respond-to(small) { ... }*/ }
     @media only screen and (max-width: 800px) {
@@ -209,7 +209,7 @@ main {
         max-width: 80%;
         margin: auto; } }
   #band #members h2 {
-    /*@include font-size(4.5em, 2.3em);*/
+    /*@include responsive-font-size(4.5em, 2.3em);*/
     font-size: 2.5em;
     /*@include respond-to(small) { ... }*/
     color: #f79a51;
