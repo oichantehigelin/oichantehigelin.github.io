@@ -185,11 +185,11 @@ main {
 
 /***** Discover *****/
 #discover #video-box {
-  width: 50%;
+  width: 100%;
   text-align: center;
   margin: auto; }
 #discover #audio-player {
-  margin-top: 3em;
+  margin: 3em 0;
   display: flex;
   flex-direction: column; }
   #discover #audio-player div {
