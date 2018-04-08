@@ -1,3 +1,6 @@
+/*-------------------------*\
+    Browser compatibility
+\*-------------------------*/
 /*-------------*\
     Variables
 \*-------------*/
@@ -37,10 +40,15 @@ a {
 main {
   width: 100%;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   /*@include respond-to(small) { ... }*/ }
   @media only screen and (max-width: 800px) {
     main {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column; } }
 
 /*----------------------*\
@@ -57,6 +65,8 @@ main {
   background-color: #0f0f0f;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
   /*@include respond-to(large) { ... }*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
   @media only screen and (min-width: 801px) {
     #one {
@@ -100,13 +110,18 @@ main {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 5vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     background-color: #141414; }
     @media only screen and (max-width: 800px) {
       #two nav {
         display: none; } }
     #two nav .nav-item {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
       flex: 1;
       text-align: center;
       text-transform: uppercase;
@@ -126,7 +141,12 @@ main {
 /***** Global *****/
 #two section {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column; }
   #two section h1 {
     text-align: center;
@@ -141,7 +161,12 @@ main {
 
 /***** Band *****/
 #band #introduction {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column; }
   #band #introduction img {
     margin: auto;
@@ -157,8 +182,13 @@ main {
   @media only screen and (min-width: 801px) {
     #band #members .row {
       padding: 3em;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex; }
       #band #members .row:nth-of-type(2), #band #members .row:nth-of-type(4) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
         flex-direction: row-reverse; }
       #band #members .row img {
         width: 30%; }
@@ -167,7 +197,12 @@ main {
         padding: 0 1em; } }
   @media only screen and (max-width: 800px) {
     #band #members .row {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column; }
       #band #members .row img {
         min-width: 60%;
@@ -190,19 +225,29 @@ main {
   margin: auto; }
 #discover #audio-player {
   margin: 3em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column; }
   #discover #audio-player div {
     height: 5vh;
     width: 50%;
     margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center; }
     #discover #audio-player div span {
       line-height: 5vh;
       padding: 0 1em;
       font-size: 0.8em;
-      width: 30%; }
+      width: 200px;
+      text-align: right; }
     #discover #audio-player div audio {
       width: 50%; }
 
