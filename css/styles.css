@@ -23,7 +23,8 @@ html, body {
   color: white; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Boogaloo", sans-serif; }
+  font-family: "Boogaloo", sans-serif;
+  font-weight: normal; }
 
 p {
   max-width: 1000px;
@@ -256,6 +257,14 @@ main {
   text-align: left;
   width: 80%;
   margin: auto; }
+  #dates #agenda h2 {
+    color: #f79a51;
+    /*@include responsive-font-size(4.5em, 2.3em);*/
+    font-size: 2.5em;
+    /*@include respond-to(small) { ... }*/ }
+    @media only screen and (max-width: 800px) {
+      #dates #agenda h2 {
+        font-size: 1.7em; } }
   #dates #agenda table {
     background-color: #0f0f0f;
     width: 100%;
