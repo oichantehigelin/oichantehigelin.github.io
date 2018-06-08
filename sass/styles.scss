@@ -54,7 +54,6 @@ html, body {
 * {
     font-family: $body-font;
     color: $text-color;
-    font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,8 +63,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     max-width: 1000px;
-    text-align: justify;
     line-height: 150%;
+    font-weight: 300;
     @include respond-to(small) {
         padding: 0 1em;
     }
@@ -192,13 +191,16 @@ main {
         display: flex;
         flex-direction: column;
         img {
+            width: 75%;
             margin: auto;
             @include respond-to(small) {
                 width: 90%;
             }
         }
-        p {
-            margin: 3em auto;
+        div {
+            width: 60%;
+            margin: 2em auto 1em auto;
+
         }
     }
     #members {
