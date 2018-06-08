@@ -199,8 +199,8 @@ main {
         }
         div {
             width: 60%;
+            @include respond-to(small) { width: 95%; }
             margin: 2em auto 1em auto;
-
         }
     }
     #members {
@@ -247,25 +247,86 @@ main {
         text-align: center;
         margin: auto;
     }
-    #audio-player {
-        margin: 3em 0;
-        display: flex;
-        flex-direction: column;
-        div {
-            height: 5vh;
-            width: 50%;
-            margin: auto;
+
+    .content {
+        width: 50%;
+        height: 50vh;
+        margin: 3em auto;
+        @include respond-to(small) { width: 80%; }
+        .audio-player {
+            background-color: black;
+            width: 100%;
+            height: 10vh;
             display: flex;
-            justify-content: center;
-            span {
-                line-height: 5vh;
-                padding: 0 1em;
-                font-size: 0.8em;
-                width: 200px;
-                text-align: right;
+            align-items: center;
+            justify-content: space-evenly;
+            .button {
+                width: 6vh;
+                height: 6vh;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
             }
-            audio {
-                width: 50%;
+            .info {
+                width: 80%;
+                .title {
+                    font-size: 0.8em;
+                }
+                .progress-bar {
+                    background-color: rgb(10,10,10);
+                    width: 100%;
+                    height: 20px;
+                    .progress {
+                        background-color: #ffad3d;
+                        width: 0px;
+                        height: 20px;
+                    }
+                }
+                .audio-infos {
+                    font-size: 0.8em;
+                    height: 15px;
+                    display: flex;
+                    justify-content: space-between;
+                    span.current-time, span.duration {
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+        .audio-list {
+            background-color: rgb(10,10,10);
+            width: 100%;
+            height: 25vh;
+            ul {
+                padding: 0;
+                margin: 0;
+                li {
+                    list-style-type: none;
+                    font-size: 0.8em;
+                    padding: 0 1em;
+                    height: 2em;
+                    line-height: 2em;
+                    display: flex;
+                    justify-content: space-between;
+                    overflow-x: hidden;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    .active {
+                        color: #ffad3d;
+                    }
+                }
+            }
+        }
+        .playlist-length {
+            background-color: rgb(10,10,10);
+            padding: 0.5em 1em;
+            span {
+                font-size: 0.8em;
             }
         }
     }
@@ -302,8 +363,5 @@ main {
             width: 200px;
             @include respond-to(small) { width: 100px; }
         }
-
-
-
     }
 }
