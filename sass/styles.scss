@@ -292,8 +292,16 @@ main {
         th {
             font-family: $title-font;
             color: $accent-color;
-            font-size: 1.5em;
+            font-size: 1.3em;
+            font-weight: 400;
             padding: 0.7em;
         }
+        tbody td:first-of-type {
+            width: 200px;
+            @include respond-to(small) { width: 100px; }
+        }
+
+
+
     }
 }
