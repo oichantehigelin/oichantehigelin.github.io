@@ -19,12 +19,13 @@ html, body {
   box-sizing: inherit; }
 
 * {
-  font-family: "Raleway", sans-serif;
-  color: white; }
+  font-family: "Rubik", sans-serif;
+  color: white;
+  font-weight: 300; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Boogaloo", sans-serif;
-  font-weight: normal; }
+  font-family: "Rubik", sans-serif;
+  font-weight: 500; }
 
 p {
   max-width: 1000px;
@@ -83,7 +84,7 @@ main {
       width: 40%; }
     #one .column h1 {
       /*@include responsive-font-size(4.5em, 2.3em);*/
-      font-size: 3.5em;
+      font-size: 3em;
       /*@include respond-to(small) { ... }*/
       text-transform: uppercase;
       color: #f79a51; }
@@ -94,7 +95,8 @@ main {
       font-size: 1.1em;
       text-align: center; }
       #one .column p a {
-        color: #f79a51; }
+        color: #f79a51;
+        font-weight: 400; }
     #one .column a img {
       width: 50px; }
 
@@ -131,6 +133,7 @@ main {
       #two nav .nav-item a {
         color: #9d9d9d;
         font-size: 0.9em;
+        font-weight: 400;
         display: block; }
         #two nav .nav-item a:hover, #two nav .nav-item a.active {
           background-color: #111111;
@@ -154,7 +157,7 @@ main {
     text-transform: uppercase;
     color: #f79a51;
     /*@include responsive-font-size(4.5em, 2.3em);*/
-    font-size: 3em;
+    font-size: 2.5em;
     /*@include respond-to(small) { ... }*/ }
     @media only screen and (max-width: 800px) {
       #two section h1 {
@@ -274,7 +277,7 @@ main {
     #dates #agenda table td {
       padding: 1em; }
     #dates #agenda table th {
-      font-family: "Boogaloo", sans-serif;
+      font-family: "Rubik", sans-serif;
       color: #f79a51;
       font-size: 1.5em;
       padding: 0.7em; }
