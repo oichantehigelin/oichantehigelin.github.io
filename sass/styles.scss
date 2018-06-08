@@ -287,12 +287,13 @@ main {
                     }
                 }
                 .audio-infos {
-                    font-size: 0.8em;
                     height: 15px;
                     display: flex;
                     justify-content: space-between;
                     span.current-time, span.duration {
                         padding-top: 5px;
+                        font-family: "Inconsolata", monospace;
+                        font-size: 0.9em;
                     }
                 }
             }
@@ -319,6 +320,10 @@ main {
                     .active {
                         color: #ffad3d;
                     }
+                    .duration {
+                        font-family: "Inconsolata", monospace;
+                        font-size: 1.1em;
+                    }
                 }
             }
         }
@@ -326,7 +331,8 @@ main {
             background-color: rgb(10,10,10);
             padding: 0.5em 1em;
             span {
-                font-size: 0.8em;
+                font-family: "Inconsolata", monospace;
+                font-size: 0.9em;
             }
         }
     }

@@ -233,12 +233,13 @@ main {
           width: 0px;
           height: 20px; }
       #discover .content .audio-player .info .audio-infos {
-        font-size: 0.8em;
         height: 15px;
         display: flex;
         justify-content: space-between; }
         #discover .content .audio-player .info .audio-infos span.current-time, #discover .content .audio-player .info .audio-infos span.duration {
-          padding-top: 5px; }
+          padding-top: 5px;
+          font-family: "Inconsolata", monospace;
+          font-size: 0.9em; }
   #discover .content .audio-list {
     background-color: #0a0a0a;
     width: 100%;
@@ -259,11 +260,15 @@ main {
           cursor: pointer; }
         #discover .content .audio-list ul li .active {
           color: #ffad3d; }
+        #discover .content .audio-list ul li .duration {
+          font-family: "Inconsolata", monospace;
+          font-size: 1.1em; }
   #discover .content .playlist-length {
     background-color: #0a0a0a;
     padding: 0.5em 1em; }
     #discover .content .playlist-length span {
-      font-size: 0.8em; }
+      font-family: "Inconsolata", monospace;
+      font-size: 0.9em; }
 
 /***** Dates *****/
 #dates #agenda {
