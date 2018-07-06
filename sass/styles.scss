@@ -239,6 +239,12 @@ main {
     }
 }
 
+/***** History *****/
+
+#history .content {
+    min-height: 78.3vh;
+}
+
 /***** Discover *****/
 
 #discover {
@@ -250,7 +256,7 @@ main {
 
     .content {
         width: 50%;
-        height: 50vh;
+        min-height: 68vh;
         margin: 3em auto;
         @include respond-to(small) { width: 80%; }
         .audio-player {
@@ -340,10 +346,11 @@ main {
 
 /***** Dates *****/
 
-#dates #agenda {
+#dates .content {
     text-align: left;
     width: 80%;
     margin: auto;
+    min-height: 78.3vh;
     h2 {
         color: $accent-color;
         @include responsive-font-size(2.5em, 1.7em);
@@ -369,5 +376,19 @@ main {
             width: 200px;
             @include respond-to(small) { width: 100px; }
         }
+    }
+}
+
+/***** Footer *****/
+
+footer {
+    background-color: #0f0f0f;
+    font-size: 0.8em;
+    height: 2.7vh;
+    line-height: 2.7vh;
+    padding: 0 1em;
+    text-align: right;
+    a {
+        color: #9d9d9d;
     }
 }

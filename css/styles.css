@@ -192,6 +192,10 @@ main {
       #band #members h2 {
         font-size: 1.7em; } }
 
+/***** History *****/
+#history .content {
+  min-height: 78.3vh; }
+
 /***** Discover *****/
 #discover #video-box {
   width: 100%;
@@ -199,7 +203,7 @@ main {
   margin: auto; }
 #discover .content {
   width: 50%;
-  height: 50vh;
+  min-height: 68vh;
   margin: 3em auto;
   /*@include respond-to(small) { ... }*/ }
   @media only screen and (max-width: 800px) {
@@ -271,37 +275,49 @@ main {
       font-size: 0.9em; }
 
 /***** Dates *****/
-#dates #agenda {
+#dates .content {
   text-align: left;
   width: 80%;
-  margin: auto; }
-  #dates #agenda h2 {
+  margin: auto;
+  min-height: 78.3vh; }
+  #dates .content h2 {
     color: #f79a51;
     /*@include responsive-font-size(4.5em, 2.3em);*/
     font-size: 2.5em;
     /*@include respond-to(small) { ... }*/ }
     @media only screen and (max-width: 800px) {
-      #dates #agenda h2 {
+      #dates .content h2 {
         font-size: 1.7em; } }
-  #dates #agenda table {
+  #dates .content table {
     background-color: #0f0f0f;
     width: 100%;
     border-collapse: collapse; }
-    #dates #agenda table td, #dates #agenda table th {
+    #dates .content table td, #dates .content table th {
       border: 2px solid #191919; }
-    #dates #agenda table td {
+    #dates .content table td {
       padding: 1em; }
-    #dates #agenda table th {
+    #dates .content table th {
       font-family: "Rubik", sans-serif;
       color: #f79a51;
       font-size: 1.3em;
       font-weight: 400;
       padding: 0.7em; }
-    #dates #agenda table tbody td:first-of-type {
+    #dates .content table tbody td:first-of-type {
       width: 200px;
       /*@include respond-to(small) { ... }*/ }
       @media only screen and (max-width: 800px) {
-        #dates #agenda table tbody td:first-of-type {
+        #dates .content table tbody td:first-of-type {
           width: 100px; } }
+
+/***** Footer *****/
+footer {
+  background-color: #0f0f0f;
+  font-size: 0.8em;
+  height: 2.7vh;
+  line-height: 2.7vh;
+  padding: 0 1em;
+  text-align: right; }
+  footer a {
+    color: #9d9d9d; }
 
 /*# sourceMappingURL=styles.css.map */
