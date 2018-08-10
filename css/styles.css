@@ -327,7 +327,14 @@ main {
 
 /***** Mentions légales *****/
 #legal .content {
-  padding: 0 3em; }
+  /*@include respond-to(small) { ... }*/
+  /*@include respond-to(large) { ... }*/ }
+  @media only screen and (max-width: 800px) {
+    #legal .content {
+      padding: 0 1em; } }
+  @media only screen and (min-width: 801px) {
+    #legal .content {
+      padding: 0 3em; } }
   #legal .content a {
     color: #f79a51; }
     #legal .content a:hover {

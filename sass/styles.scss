@@ -395,7 +395,8 @@ main {
 /***** Mentions légales *****/
 
 #legal .content {
-    padding: 0 3em;
+    @include respond-to(small) { padding: 0 1em; }
+    @include respond-to(large) { padding: 0 3em; }
     a {
         color: $accent-color;
         &:hover {
