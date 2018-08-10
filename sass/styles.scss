@@ -397,19 +397,17 @@ main {
 #legal .content {
     @include respond-to(small) { padding: 0 1em; }
     @include respond-to(large) { padding: 0 3em; }
+    p { max-width: 100vw; }
+    ul li { line-height: 150%; }
+    p strong {
+        font-size: 120%;
+        color: $accent-color;
+    }
     a {
         color: $accent-color;
         &:hover {
             text-decoration: underline;
         }
-    }
-    p strong {
-        font-size: 120%;
-        color: $accent-color;
-    }
-
-    ul li {
-        line-height: 150%;
     }
 }
 
