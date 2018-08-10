@@ -294,9 +294,16 @@ main {
 /***** Dates *****/
 #dates .content {
   text-align: left;
-  width: 80%;
+  /*@include respond-to(small) { ... }*/
+  /*@include respond-to(large) { ... }*/
   margin: auto;
   min-height: 78.3vh; }
+  @media only screen and (max-width: 800px) {
+    #dates .content {
+      width: 90%; } }
+  @media only screen and (min-width: 801px) {
+    #dates .content {
+      width: 80%; } }
   #dates .content h2 {
     color: #f79a51;
     /*@include responsive-font-size(4.5em, 2.3em);*/
