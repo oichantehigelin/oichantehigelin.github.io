@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*-------------*\
     Variables
 \*-------------*/
@@ -208,7 +209,7 @@ main {
         font-size: 1.7em; } }
 
 /***** History *****/
-#history .content {
+#history .content, #legal .content {
   min-height: 78.3vh; }
 
 /***** Discover *****/
@@ -324,19 +325,41 @@ main {
         #dates .content table tbody td:first-of-type {
           width: 100px; } }
 
+/***** Mentions légales *****/
+#legal .content {
+  padding: 0 3em; }
+  #legal .content a {
+    color: #f79a51; }
+    #legal .content a:hover {
+      text-decoration: underline; }
+  #legal .content p strong {
+    font-size: 120%;
+    color: #f79a51; }
+  #legal .content ul li {
+    line-height: 150%; }
+
 /***** Footer *****/
 footer {
   background-color: #0f0f0f;
-  font-size: 0.8em;
-  height: 2.7vh;
-  line-height: 2.7vh;
+  font-size: 0.9em;
+  min-height: 3.5vh;
   padding: 0 1em;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
   /*@include respond-to(small) { ... }*/ }
+  footer span {
+    color: #595959;
+    margin: auto 0; }
   footer a {
     color: #9d9d9d; }
+    footer a:hover {
+      text-decoration: underline; }
   @media only screen and (max-width: 800px) {
     footer {
-      order: 3; } }
+      order: 3;
+      padding: 1em 0;
+      flex-direction: column;
+      text-align: center;
+      line-height: 150%; } }
 
 /*# sourceMappingURL=styles.css.map */
