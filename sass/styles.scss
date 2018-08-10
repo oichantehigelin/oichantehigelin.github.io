@@ -254,8 +254,9 @@ main {
 
 /***** History *****/
 
-#history .content, #legal .content {
+#history .content {
     min-height: 78.3vh;
+    margin: auto;
 }
 
 /***** Discover *****/

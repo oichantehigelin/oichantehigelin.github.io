@@ -209,8 +209,9 @@ main {
         font-size: 1.7em; } }
 
 /***** History *****/
-#history .content, #legal .content {
-  min-height: 78.3vh; }
+#history .content {
+  min-height: 78.3vh;
+  margin: auto; }
 
 /***** Discover *****/
 #discover #video-box {

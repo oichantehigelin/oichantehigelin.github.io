@@ -1,38 +1,28 @@
 const playlist = [
     {
-        band: "Creedence Clearwater Revival",
-        title: "Down On The Corner",
-        file: "music/Creedence Clearwater Revival - Down On The Corner.mp3"
+        band: "Oï chante Higelin",
+        title: "Grain de poussière",
+        file: "music/grain-de-poussiere.mp3"
     },
     {
-        band: "Creedence Clearwater Revival",
-        title: "I Put A Spell On You",
-        file: "music/Creedence Clearwater Revival - I Put A Spell On You.mp3"
+        band: "Oï chante Higelin",
+        title: "Champagne",
+        file: "music/champagne.mp3"
     },
     {
-        band: "Creedence Clearwater Revival",
-        title: "Born On The Bayou",
-        file: "music/Creedence Clearwater Revival - Born On The Bayou.mp3"
+        band: "Oï chante Higelin",
+        title: "La rage en d'dans",
+        file: "music/la-rage-en-ddans.mp3"
     },
     {
-        band: "Creedence Clearwater Revival",
-        title: "Someday Never Comes",
-        file: "music/Creedence Clearwater Revival - Someday Never Comes.mp3"
+        band: "Oï chante Higelin",
+        title: "Victoria",
+        file: "music/victoria.mp3"
     },
     {
-        band: "Creedence Clearwater Revival",
-        title: "Suzie Q",
-        file: "music/Creedence Clearwater Revival - Suzie Q..mp3"
-    },
-    {
-        band: "Creedence Clearwater Revival",
-        title: "Good Golly Miss Molly",
-        file: "music/Creedence Clearwater Revival - Good Golly Miss Molly.mp3"
-    },
-    {
-        band: "Creedence Clearwater Revival",
-        title: "Travelin' Band",
-        file: "music/Creedence Clearwater Revival - Travelin' Band.mp3"
+        band: "Oï chante Higelin",
+        title: "Tombé du ciel",
+        file: "music/tombe-du-ciel.mp3"
     }
 ]
 
