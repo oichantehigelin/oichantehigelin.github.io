@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Site en construction</title>
+        <meta charset="UTF-8"/>
+        <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+        <style>
+            @keyframes width {
+                0%{transform: scaleX(0);width: 100%;}
+                25%{transform: scaleX(1); width: 100%;}
+                40%{transform: scaleX(1); width: 0;}
+                65%{transform: scaleX(1); width: 100%;}
+                85%{transform: scaleX(0); width: 100%;}
+                100%{transform: scaleX(0); width: 0;}
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: rgb(15, 15, 15);
+                font-family: "Rubik", sans-serif;
+            }
+
+            div.container {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1 {
+                position: relative;
+                transition: .3s ease;
+                color: #fff;
+                font-size: 3em;
+                font-weight: normal;
+            }
+
+            h1::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                transform: scaleX(0);
+                /*background: #000;*/
+                background: rgb(247,154,81);
+                transform-origin: right;
+                animation: width 3s ease infinite;
+            }
+
+            h1::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transform: scaleX(0);
+                /*background: #fff;*/
+                background: rgb(15, 15, 15);
+                transform-origin: right;
+                animation: width 3s ease infinite;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Site en construction</h1>
+        </div>
+    </body>
+</html>
