@@ -1,72 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Site en construction</title>
-        <meta charset="UTF-8"/>
+        <title>Oï chante Higelin</title>
+        <meta name="description" content="">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
-        <style>
-            @keyframes width {
-                0%{transform: scaleX(0);width: 100%;}
-                25%{transform: scaleX(1); width: 100%;}
-                40%{transform: scaleX(1); width: 0;}
-                65%{transform: scaleX(1); width: 100%;}
-                85%{transform: scaleX(0); width: 100%;}
-                100%{transform: scaleX(0); width: 0;}
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                background: rgb(15, 15, 15);
-                font-family: "Rubik", sans-serif;
-            }
-
-            div.container {
-                width: 100vw;
-                height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            h1 {
-                position: relative;
-                transition: .3s ease;
-                color: #fff;
-                font-size: 3em;
-                font-weight: normal;
-            }
-
-            h1::after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                transform: scaleX(0);
-                /*background: #000;*/
-                background: rgb(247,154,81);
-                transform-origin: right;
-                animation: width 3s ease infinite;
-            }
-
-            h1::before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                transform: scaleX(0);
-                /*background: #fff;*/
-                background: rgb(15, 15, 15);
-                transform-origin: right;
-                animation: width 3s ease infinite;
-            }
-
-        </style>
+        <link type="text/css" rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <div class="container">
-            <h1>Site en construction</h1>
-        </div>
+        <main>
+            <!-- LEFT SECTION -->
+            <section id="one">
+                <div class="column">
+                    <img src="img/logo.svg" alt="logo"/>
+                    <h1>chante Higelin</h1>
+                    <p>
+                        <script>
+                            document.write('<a href="' + 'mailto:' + 'oi' + 'chante' + 'higelin' + '@' + 'gmail' + '.' + 'com' + '">'
+                            + "oi" + "chante" + "higelin" + "@" + "gmail" + "." + "com" + '</a>')
+                        </script>
+                    </p>
+                    <a href="https://www.facebook.com/O%C3%AF-Chante-Higelin-1631253180226739/" target="_blank"><img src="img/facebook-square.svg"/></a>
+                </div>
+            </section>
+            <!-- RIGHT SECTION -->
+            <section id="two">
+                <!-- Content -->
+                <section id="band">
+                    <h1>Le groupe</h1>
+                    <div id="introduction">
+                        <img src="img/groupe.jpg" alt="le groupe"/>
+                        <div>
+                            <p>OÏ, formation inter-générationnelle, est composé de 5 musiciens: chant et claviers, drums, guitare, basse, saxophone.</p>
+                            <p>OÏ reprend les meilleures chansons de Jacques Higelin, qui a marqué sa génération par ses superbes chansons poétiques, connu aussi pour sa remarquable présence scénique.</p>
+                            <p>OÏ, c'est la formation qui ose ré-arranger, interpréter, et jouer les meilleurs morceaux du grand Jacques, du rock aux ballades, du gros son au piano solo.</p>
+                            <p>OÏ va plaire à beaucoup de gens. La musique d'Higelin nous a uni comme des frères, et ça continue.</p>
+                            <p>Merci Jacques</p>
+                        </div>
+                    </div>
+                    <div id="members">
+                        <div class="row">
+                            <img src="img/patoo.jpg"/>
+                            <div class="column">
+                                <h2>Patrice Chauveau</h2>
+                                <p><b>Patoon</b>, le manège qui Cartoon ! Piano-chant, pour lui deux références aux claviers : John Lord et Higelin. C’est peu mais ça lui va bien !</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <img src="img/janyv.jpg"/>
+                            <div class="column">
+                                <h2>Jean-Yves Briaud</h2>
+                                <p><b>Janyv</b> Flamingo qui astique son Sax en onyx, toujours d’accord jamais à l’abordage. Et de tous, le plus sage.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <img src="img/noel.jpg"/>
+                            <div class="column">
+                                <h2>Noël Loiseau</h2>
+                                <p><b>Noël</b> le father, guitariste dort avec sa Fender. Comme les lattes de son sommier les barrettes de sa guitare sont usagées...</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <img src="img/sylvain.jpg"/>
+                            <div class="column">
+                                <h2>Sylvain Loiseau</h2>
+                                <p><b>Sylvain</b> le médecin, bassiste, guitariste, il joue avec n’importe qui, n’importe quoi. Et les gens l’adorent, croyant toujours bien faire !</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <img src="img/romeo.jpg"/>
+                            <div class="column">
+                                <h2>Roméo Loiseau</h2>
+                                <p>Roméo, dit <b>Rom</b> ou Batteur, un vrai métronome. Quand les frangines ont la peau moite, lui reste aussi précis qu’une boîte.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Navigation -->
+                <nav>
+                    <div class="nav-item"><a href="index.html" class="active">Le groupe</a></div>
+                    <div class="nav-item"><a href="histoire.html">L'histoire</a></div>
+                    <div class="nav-item"><a href="musique.html">La musique</a></div>
+                </nav>
+                <!-- Footer -->
+                <footer>
+                    <a href="mentions-legales.html">Mentions légales</a>
+                </footer>
+            </section>
+        </main>
     </body>
 </html>

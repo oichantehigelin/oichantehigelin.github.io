@@ -1,0 +1,402 @@
+/*-------------*\
+    Variables
+\*-------------*/
+
+$bg1: rgb(15, 15, 15);
+$bg2: rgb(25, 25, 25);
+$accent-color: rgb(247,154,81);
+$text-color: white;
+
+$base-text-size: 16px;
+
+$body-font: "Rubik", sans-serif;
+$title-font: "Rubik", sans-serif;
+
+/*---------------*\
+    Responsive
+\*---------------*/
+
+$small: 800px;
+$large: 801px;
+
+@mixin respond-to($media) {
+    @if $media == small {
+        @media only screen and (max-width: $small) { @content; }        /*@include respond-to(small) { ... }*/
+    }
+    @else if $media == large {
+        @media only screen and (min-width: $large) { @content; }        /*@include respond-to(large) { ... }*/
+    }
+}
+
+@mixin font-size($value) {
+    font-size: $base-text-size * $value;
+}
+
+@mixin responsive-font-size($large, $small) {                           /*@include responsive-font-size(4.5em, 2.3em);*/
+    font-size: $large;
+    @include respond-to(small) { font-size: $small; }
+}
+
+/*----------*\
+    Global
+\*----------*/
+
+html, body {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+
+* {
+    font-family: $body-font;
+    color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $title-font;
+    font-weight: 500;
+}
+
+p {
+    font-weight: 300;
+    text-align: justify;
+    @include respond-to(large) {
+        line-height: 200%;
+        margin: auto;
+    }
+    @include respond-to(small) {
+        padding: 0 1em;
+        line-height: 150%;
+        max-width: 1000px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    @include respond-to(small) {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+}
+
+/*----------------------*\
+    Panels #one & #two
+\*----------------------*/
+
+#one, #two {
+    @include respond-to(small) {
+        width: 100%;
+    }
+}
+
+#one {
+    @include respond-to(small) {
+      min-height: 100vh;
+    }
+    background-color: $bg1;
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.7);
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.7);
+    @include respond-to(large) {
+        position: fixed;
+        width: 30%;
+        height: 100vh;
+    }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    .column {
+        width: 100%;
+        height: 60%;
+        margin: auto;
+        text-align: center;
+        img {
+            width: 40%;
+        }
+        h1 {
+            @include responsive-font-size(3em, 2em);
+            text-transform: uppercase;
+            color: $accent-color;
+        }
+        p {
+            font-size: 1.1em;
+            text-align: center;
+            margin-bottom: 30px;
+            a {
+                color: $accent-color;
+                font-weight: 400;
+            }
+        }
+        a img { width: 50px; }
+    }
+}
+
+#two {
+    background-color: $bg2;
+    width: 100%;
+    @include respond-to(large) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      margin-left: 30%;
+      min-height: 100vh;
+    }
+    @include respond-to(small) { display: block; }
+
+    /***** navigation *****/
+    nav {
+        /* mobile navigation */
+        @include respond-to(small) {
+            display: block;
+            .nav-item {
+                width: 100%;
+                height: 10vh;
+                line-height: 10vh;
+                font-size: 1.2em;
+                a { width: 100%; }
+            }
+        }
+        /* desktop navigation */
+        @include respond-to(large) {
+            -webkit-box-ordinal-group: 2;
+                -ms-flex-order: 1;
+                    order: 1;
+            height: 5vh;
+            .nav-item {
+                height: 5vh;
+                line-height: 5vh;
+            }
+        }
+        -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: rgb(20,20,20);
+        .nav-item {
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+            text-align: center;
+            text-transform: uppercase;
+            a {
+                color: #9d9d9d;
+                font-size: 0.9em;
+                font-weight: 400;
+                display: block;
+                &:hover, &.active {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+}
+
+/*--------------*\
+    Panel #two
+\*--------------*/
+
+/***** Global *****/
+
+#two section {
+    width: 100%;
+    @include respond-to(small) {
+
+    }
+    @include respond-to(large) {
+      -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+              order: 2;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: $accent-color;
+        @include responsive-font-size(2.5em, 2em);
+    }
+}
+
+/***** Band *****/
+
+#band {
+    #introduction {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        img {
+            width: 75%;
+            -ms-flex-item-align: center;
+                align-self: center;
+            max-height: 700px;
+            @include respond-to(small) {
+                width: 90%;
+            }
+        }
+        div {
+            width: 60%;
+            @include respond-to(small) { width: 95%; }
+            margin: 2em auto 1em auto;
+        }
+    }
+    #members {
+        @include respond-to(large) {
+            .row {
+                padding: 3em;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                &:nth-of-type(2), &:nth-of-type(4) {
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: reverse;
+                        -ms-flex-direction: row-reverse;
+                            flex-direction: row-reverse;
+                }
+                img {
+                    width: 30%;
+                    -ms-flex-item-align: start;
+                        align-self: start;
+                }
+                .column {
+                    width: 70%;
+                    padding: 0 1em;
+                    p {
+                      width: 80%;
+                    }
+                }
+            }
+        }
+        @include respond-to(small) {
+            .row {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                margin-bottom: 60px;
+                img {
+                    min-width: 60%;
+                    max-width: 80%;
+                    margin: auto;
+                    max-height: 360px;
+                }
+            }
+        }
+        h2 {
+            @include responsive-font-size(2.5em, 1.7em);
+            color: $accent-color;
+            text-align: center;
+        }
+    }
+}
+
+/***** History *****/
+
+#history .content {
+    min-height: 78.3vh;
+    @include respond-to(small) { width: 95%; }
+    @include respond-to(large) { width: 80%; }
+    margin: auto;
+}
+
+/***** Music *****/
+
+#music {
+    min-height: 91.5vh;
+    #audioplayer-container {
+        @include respond-to(small) { width: 90%; }
+        @include respond-to(large) { width: 70%; }
+        margin: 3em auto;
+        iframe {
+            width: 100%;
+            min-height: 45vh;
+            border: 0;
+            outline: 0;
+        }
+    }
+}
+
+/***** Legal *****/
+
+#legal .content {
+    @include respond-to(small) { padding: 0 1em; }
+    @include respond-to(large) { padding: 0 3em; }
+    p { max-width: 100vw; }
+    ul li { line-height: 150%; }
+    p strong {
+        font-size: 120%;
+        color: $accent-color;
+    }
+    a {
+        color: $accent-color;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/***** Footer *****/
+
+footer {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    font-size: 0.9em;
+    min-height: 3.5vh;
+    padding: 0 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    a {
+        margin: auto 0;
+        color: #333;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @include respond-to(small) {
+        padding: 1em 0;
+        line-height: 150%;
+        a { margin: auto; }
+    }
+}
